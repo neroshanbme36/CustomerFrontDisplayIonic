@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'customer-facing-display-ionic',
+  appId: 'com.yumarone.customerfacingdisplay',
+  appName: 'Customer Facing Display',
   webDir: 'www'
 };
 
