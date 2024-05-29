@@ -1,0 +1,7 @@
+{
+  "name": "customer-facing-display-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

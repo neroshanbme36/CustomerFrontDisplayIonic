@@ -1,0 +1,5 @@
+ionic start customer-facing-display-ionic tabs --type=angular --capacitor
+
+ionic build --base-href='/CustomerFacingDisplayPublish/' --prod --build-optimizer=false
+ionic capacitor add android
+ionic capacitor build android --prod --build-optimizer=false
