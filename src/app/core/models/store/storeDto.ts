@@ -18,4 +18,5 @@ export interface StoreDto {
     countryId: string;
     customerId: string | null;
     guid: string | null;
+    currencySymbol: string;
 }

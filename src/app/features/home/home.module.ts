@@ -7,6 +7,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { JournalComponent } from './components/journal/journal.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { OrderSummaryComponent } from './components/order-summary/order-summary.
     BannerComponent,
     GreetingComponent,
     JournalComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    OrderDetailsComponent
   ],
   imports: [
     CommonModule,

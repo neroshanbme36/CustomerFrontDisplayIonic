@@ -1,3 +1,24 @@
-<p>
-  journal works!
-</p>
+<div style="overflow-x: auto;">
+  <table class="cus-table">
+    <thead class="cus-thead">
+      <tr>
+        <th scope="col" class="cus-th qty-col">Qty</th>
+        <th scope="col" class="cus-th description-col">Description</th>
+        <th scope="col" class="cus-th amount-col">Price</th>
+        <th scope="col" class="cus-th amount-col">Amount</th>
+        <th scope="col" class="cus-th amount-col">Disc(%)</th>
+        <th scope="col" class="cus-th amount-col">Net Amount</th>
+      </tr>
+    </thead>
+    <tbody class="cus-tbody">
+      <tr class="cus-tr" *ngFor="let item of parentProductLines; trackBy:itemsTrackBy" [ngClass]="{'table-danger': item.lineStatus === true}">
+        <td class="cus-td qty-col">{{item.quantity}}</td>
+        <td class="cus-td description-col">{{item.description}}</td>
+        <td class="cus-td amount-col">{{item.price | number: '.2-2'}}</td>
+        <td class="cus-td amount-col">{{item.amount | number: '.2-2'}}</td>
+        <td class="cus-td amount-col">{{item.discountPercentage | number: '.2-2'}}</td>
+        <td class="cus-td amount-col">{{item.netAmount | number: '.2-2'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

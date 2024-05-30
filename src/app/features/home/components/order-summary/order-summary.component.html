@@ -1,3 +1,44 @@
-<p>
-  order-summary works!
-</p>
+<ion-grid>
+  <ion-row>
+    <ion-col size="6">
+      <p>Total</p>
+    </ion-col>
+    <ion-col size="6">
+      <ng-container *ngIf="orderSummary?.customerOwes === 0;else customerOwesTemp">
+        <p class="text-right">
+          {{(store$ | async)?.currencySymbol}}{{(orderSummary?.total ?? 0) | number: '.2-2'}}
+        </p>
+      </ng-container>
+    </ion-col>
+    <ion-col size="6">
+      <p>Discount</p>
+    </ion-col>
+    <ion-col size="6">
+      <p class="text-right">
+        {{(store$ | async)?.currencySymbol}}{{(orderSummary?.discount ?? 0) | number: '.2-2'}}
+      </p>
+    </ion-col>
+    <ion-col size="6">
+      <p>Payment</p>
+    </ion-col>
+    <ion-col size="6">
+      <p class="text-right">
+        {{(store$ | async)?.currencySymbol}}{{(orderSummary?.payment ?? 0) | number: '.2-2' }}
+      </p>
+    </ion-col>
+    <ion-col size="6">
+      <p>Balance</p>
+    </ion-col>
+    <ion-col size="6">
+      <p class="text-right">
+        {{(store$ | async)?.currencySymbol}}{{(orderSummary?.balance ?? 0) | number: '.2-2'}}
+      </p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ng-template #customerOwesTemp>
+  <p class="text-right">
+    {{(store$ | async)?.currencySymbol}}{{(orderSummary?.customerOwes ?? 0) | number: '.2-2'}}
+  </p>
+</ng-template>

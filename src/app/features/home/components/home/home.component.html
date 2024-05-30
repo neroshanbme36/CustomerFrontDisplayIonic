@@ -1,4 +1,4 @@
 <app-greeting></app-greeting>
-<app-journal></app-journal>
-<app-order-summary></app-order-summary>
+<app-journal [parentProductLines]="currentOrder?.parentProductLines"></app-journal>
+<app-order-summary [orderSummary]="currentOrder?.orderSummary"></app-order-summary>
 <app-banner></app-banner>

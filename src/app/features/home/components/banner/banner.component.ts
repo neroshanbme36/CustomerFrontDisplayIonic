@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
 import { StoreDto } from '../../../../core/models/store/storeDto';
 import { ImagesApiService } from '../../../../core/services/api/images-api.service';
 import { StoresService } from '../../../../core/services/stores.service';
@@ -11,7 +11,9 @@ import { IonAlertService } from '../../../../core/services/ui/ion-alert.service'
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit, OnDestroy {
-  banners: string[] = [];
+  currentBannerUrl = '';
+  private bannersUrl: string[] = [];
+  private currentBannerIdx = 0;
   private subscriptions = new Subscription();
 
   constructor(
@@ -22,6 +24,7 @@ export class BannerComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.bindBehaviourSubjects();
+    this.slideshow();
   }
 
   ngOnDestroy(): void {
@@ -45,11 +48,27 @@ export class BannerComponent implements OnInit, OnDestroy {
     this.imagesApiService.getBannersUrl(storeGuid)
       .subscribe({
         next: (response: string[]) => {
-          this.banners = response;
+          this.bannersUrl = response;
         },
         error: (error) => {
           this.ionAlertService.showAlertAsync(error);
         }
       });
+  }
+
+  private slideshow(): void {
+    const source = timer(1000, 1000 * 5);
+    this.subscriptions.add(
+      source.subscribe(val => {
+        if (this.bannersUrl.length > 0) {
+          this.currentBannerUrl = this.bannersUrl[this.currentBannerIdx];
+          if (this.currentBannerIdx < (this.bannersUrl.length - 1)) {
+            this.currentBannerIdx++;
+          } else {
+            this.currentBannerIdx = 0;
+          }
+        }
+      })
+    );
   }
 }
