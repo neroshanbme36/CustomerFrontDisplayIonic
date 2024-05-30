@@ -25,7 +25,7 @@ export class GreetingComponent implements OnInit {
     this.storesApiService.getStore()
     .subscribe({
       next: (response: StoreDto) => {
-        this.storesService.store = response;
+        this.storesService.updateStoreSrc(response);
       }, error: (error) => {
         this.ionAlertService.showAlertAsync(error);
       }
