@@ -50,7 +50,7 @@ export class IonPlatformService {
       // this.modalCtrl.dismiss();
       if (!this.isExistAlertBoxShown) {
         const currentUrlUpper = this.previousRouteService.currentUrl.trim().toUpperCase();
-        if (currentUrlUpper === '/TAB-NAV/HOME') {
+        if (currentUrlUpper === '/TABS/HOME') {
           this.isExistAlertBoxShown = true;
           await this.ionAlertService
             .showConfirmAsync('Do you want to exit?', () => {(navigator as any).app.exitApp()},

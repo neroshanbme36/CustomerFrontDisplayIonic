@@ -10,7 +10,6 @@ import { filter, pairwise } from 'rxjs/operators';
 
 export class PreviousRouteService {
   previousUrl = '/';
-  showIonBackBtn: boolean | undefined;
   private pCurrentUrl: string;
 
   constructor(private router: Router) {
