@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage-angular';
-import { TruthyCheck } from '../helpers/truthy-check';
-import { Encryption } from '../helpers/encryption';
 
 @Injectable({
   providedIn: 'root'
@@ -24,22 +22,8 @@ export class IonStorageService {
     await this._storage?.set(key, value);
   }
 
-  async setEncryptedTextAsync(salt: string, key: string, value: string): Promise<void> {
-    const ciperText = Encryption.encrypt(salt, value);
-    await this.setAsync(key, ciperText);
-  }
-
   async getAsync(key: string): Promise<string> {
     return await this._storage?.get(key);
-  }
-
-  async getDecryptedTextAsync(salt: string, key: string): Promise<string | null> {
-    const ciperText = await this.getAsync(key);
-    if (TruthyCheck.isEmpty(ciperText)) {
-      return null;
-    }
-    const plainText = Encryption.decrypt(salt, ciperText);
-    return plainText;
   }
 
   async removeAsync(key: string): Promise<void> {

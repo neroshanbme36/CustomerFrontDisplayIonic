@@ -24,15 +24,14 @@ export class HttpConfigInterceptor implements HttpInterceptor {
       }
     }
 
-    const device = this.devicesService.device;
-    if (device) {
-      if (!TruthyCheck.isEmpty(device.id)) {
-        request = request.clone({ headers: request.headers.set('x-device-id', device.id) });
-      }
+    const deviceId = this.devicesService.deviceId ?? '';
+    if (!TruthyCheck.isEmpty(deviceId)) {
+      request = request.clone({ headers: request.headers.set('x-device-id', deviceId) });
+    }
 
-      if (!TruthyCheck.isEmpty(device.productKey)) {
-        request = request.clone({ headers: request.headers.set('x-device-product-key', device.productKey) });
-      }
+    const productKey = this.devicesService.productKey ?? '';
+    if (!TruthyCheck.isEmpty(productKey)) {
+      request = request.clone({ headers: request.headers.set('x-device-product-key', productKey) });
     }
 
     return next.handle(request);
