@@ -13,6 +13,6 @@ export class StoresApiService {
   ) { }
 
   getStore(): Observable<StoreDto> {
-    return this.baseApiService.get(`/store/current-epos-transaction`, []);
+    return this.baseApiService.get(`/stores/search-by-device`, []);
   }
 }

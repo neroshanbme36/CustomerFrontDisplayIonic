@@ -8,6 +8,6 @@ export class StoresService {
   store: StoreDto | null;
 
   constructor() {
-    this.store = { id: 'ST9998', name: 'test' } as StoreDto;
+    this.store = null;
   }
 }
