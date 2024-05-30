@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BaseApiService } from './base-api.service';
 import { Observable } from 'rxjs';
-import { Order } from '../../models/order/order';
+import { StoreDto } from '../../models/store/storeDto';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TransactionsApiService {
+export class StoresApiService {
 
   constructor(
     private baseApiService: BaseApiService
   ) { }
 
-  getCurrentEposTransaction(): Observable<Order> {
-    return this.baseApiService.get(`/transactions/current-epos-transaction`, []);
+  getStore(): Observable<StoreDto> {
+    return this.baseApiService.get(`/store/current-epos-transaction`, []);
   }
 }

@@ -3,10 +3,18 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { BannerComponent } from './components/banner/banner.component';
+import { GreetingComponent } from './components/greeting/greeting.component';
+import { JournalComponent } from './components/journal/journal.component';
+import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    BannerComponent,
+    GreetingComponent,
+    JournalComponent,
+    OrderSummaryComponent
   ],
   imports: [
     CommonModule,

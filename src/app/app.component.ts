@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
     this.ionPlatformService.screenWidth = event.target.innerWidth;
   }
   
+  isInitalTaskCompleted = false;
+
   constructor(
     private ionPlatformService: IonPlatformService,
     private ionStorageService: IonStorageService,
@@ -22,5 +24,6 @@ export class AppComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     await this.ionPlatformService.initAppAsync();
     await this.ionStorageService.initAsync();
+    this.isInitalTaskCompleted = true;
   }
 }
