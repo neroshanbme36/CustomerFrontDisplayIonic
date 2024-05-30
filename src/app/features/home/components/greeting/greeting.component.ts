@@ -10,6 +10,7 @@ import { IonAlertService } from '../../../../core/services/ui/ion-alert.service'
   styleUrls: ['./greeting.component.scss']
 })
 export class GreetingComponent implements OnInit {
+  store: StoreDto | null = null;
 
   constructor(
     private storesApiService: StoresApiService,
@@ -25,7 +26,8 @@ export class GreetingComponent implements OnInit {
     this.storesApiService.getStore()
     .subscribe({
       next: (response: StoreDto) => {
-        this.storesService.updateStoreSrc(response);
+        this.store = response;
+        this.storesService.updateStoreSrc(this.store);
       }, error: (error) => {
         this.ionAlertService.showAlertAsync(error);
       }

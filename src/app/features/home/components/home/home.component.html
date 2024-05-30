@@ -1,4 +1,20 @@
-<app-greeting></app-greeting>
-<app-journal [parentProductLines]="currentOrder?.parentProductLines"></app-journal>
-<app-order-summary [orderSummary]="currentOrder?.orderSummary"></app-order-summary>
-<app-banner></app-banner>
+<ion-grid class="w-100">
+  <ion-row class="h-100">
+    <ion-col size="12" class="h-5">
+      <app-greeting></app-greeting>
+    </ion-col>
+    <ion-col size="6" class="h-95">
+      <ion-row class="h-100">
+        <ion-col size="12" class="h-80">
+          <app-journal [parentProductLines]="currentOrder?.parentProductLines"></app-journal>
+        </ion-col>
+        <ion-col size="12" class="h-20">
+          <app-order-summary [orderSummary]="currentOrder?.orderSummary"></app-order-summary>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col size="6" class="h-95">
+      <app-banner></app-banner>
+    </ion-col>
+  </ion-row>
+</ion-grid>

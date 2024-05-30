@@ -52,6 +52,50 @@
   word-wrap: break-word;
 }
 
+.text-right {
+  text-align: right;
+}
+
+/*#region Height*/
+.h-100 {
+  height: 100%;
+}
+
+.h-95 {
+  height: 95%;
+}
+
+.h-80 {
+  height: 80%;
+}
+
+.h-20 {
+  height: 20%;
+}
+
+.h-5 {
+  height: 5%;
+}
+/*#endregion Width*/
+
+/*#region Width*/
+.w-100 {
+  width: 100%;
+}
+/*#endregion Margin*/
+
+/*#region Margin*/
+.m-0 {
+  margin: 0;
+}
+/*#endregion Margin*/
+
+/*#region Margin*/
+.p-0 {
+  padding: 0;
+}
+/*#endregion Margin*/
+
 /*#region Table*/
 .table-warning,
 .table-warning > th,
