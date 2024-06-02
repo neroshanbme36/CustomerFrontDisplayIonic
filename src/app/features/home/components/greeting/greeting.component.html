@@ -1,3 +1,7 @@
-<p>
-  {{store?.name}}
-</p>
+
+<ion-row class="welcome">
+  <div>Welcome To</div>
+</ion-row>
+<ion-row class="store" *ngIf="store?.name">
+  <div>{{store?.name}}</div>
+</ion-row>

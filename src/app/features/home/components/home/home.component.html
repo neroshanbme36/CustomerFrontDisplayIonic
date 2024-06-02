@@ -1,20 +1,24 @@
 <ion-grid class="w-100">
-  <ion-row class="h-100">
-    <ion-col size="12" class="h-5">
+  <ion-row class="h-100" style="background-color: #3f87a661;">
+    <ion-col size="12">
       <app-greeting></app-greeting>
     </ion-col>
-    <ion-col size="6" class="h-95">
+    <ion-col class="h-92 left">
       <ion-row class="h-100">
-        <ion-col size="12" class="h-80">
+        <ion-col size="12" class="journal bg-white">
           <app-journal [parentProductLines]="currentOrder?.parentProductLines"></app-journal>
         </ion-col>
-        <ion-col size="12" class="h-20">
+        <ion-col size="12" class="order-summery">
           <app-order-summary [orderSummary]="currentOrder?.orderSummary"></app-order-summary>
         </ion-col>
       </ion-row>
     </ion-col>
-    <ion-col size="6" class="h-95">
-      <app-banner></app-banner>
+    <ion-col class="h-92 right">
+      <ion-row class="h-100">
+        <ion-col size="12">
+          <app-banner></app-banner>
+        </ion-col>
+      </ion-row>
     </ion-col>
   </ion-row>
 </ion-grid>

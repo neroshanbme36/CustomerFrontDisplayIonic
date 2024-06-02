@@ -62,6 +62,7 @@ export class BannerComponent implements OnInit, OnDestroy {
       source.subscribe(val => {
         if (this.bannersUrl.length > 0) {
           this.currentBannerUrl = this.bannersUrl[this.currentBannerIdx];
+          //this.currentBannerUrl = 'https://www.creativefabrica.com/wp-content/uploads/2023/03/14/American-Craft-Storefront-64308619-1.png';
           if (this.currentBannerIdx < (this.bannersUrl.length - 1)) {
             this.currentBannerIdx++;
           } else {

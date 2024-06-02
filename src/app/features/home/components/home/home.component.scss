@@ -1,0 +1,80 @@
+.bg-white {
+    background-color: white;
+}
+
+.order-summery {
+    background-color: #205d77;
+    color: white;
+    height: 18vh;
+}
+
+.journal {
+    height: 72vh;
+    overflow: auto;
+}
+
+@media screen and (max-height: 696px) {
+    .journal {
+        height: 70vh;
+    }
+
+    .order-summery {
+        height: 25%;
+    }
+}
+
+@media screen and (max-height: 634px) {
+    .journal {
+        height: 62vh
+    }
+
+    .order-summery {
+        height: 28vh
+    }
+}
+
+@media screen and (max-height: 528px) {
+    .journal {
+        height: 51vh;
+    }
+
+    .order-summery {
+        height: 31vh;
+    }
+}
+
+@media screen and (max-height: 420px) {
+    .journal {
+        height: 40vh;
+    }
+
+    .order-summery {
+        height: 36vh;
+    }
+}
+
+.left {
+    flex: 0 0 calc(calc(5 / var(--ion-grid-columns, 12))* 100%);
+    width: calc(calc(5 / var(--ion-grid-columns, 12))* 100%);
+    max-width: calc(calc(5 / var(--ion-grid-columns, 12))* 100%);
+}
+
+.right {
+    flex: 0 0 calc(calc(7 / var(--ion-grid-columns, 12))* 100%);
+    width: calc(calc(7 / var(--ion-grid-columns, 12))* 100%);
+    max-width: calc(calc(7 / var(--ion-grid-columns, 12))* 100%);
+}
+
+@media screen and (max-width: 767px) {
+    .left {
+        flex: 0 0 calc(calc(6 / var(--ion-grid-columns, 12))* 100%);
+        width: calc(calc(6 / var(--ion-grid-columns, 12))* 100%);
+        max-width: calc(calc(6 / var(--ion-grid-columns, 12))* 100%);
+    }
+
+    .right {
+        flex: 0 0 calc(calc(6 / var(--ion-grid-columns, 12))* 100%);
+        width: calc(calc(6 / var(--ion-grid-columns, 12))* 100%);
+        max-width: calc(calc(6 / var(--ion-grid-columns, 12))* 100%);
+    }
+}
