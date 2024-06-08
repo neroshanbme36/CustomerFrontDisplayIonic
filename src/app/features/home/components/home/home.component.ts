@@ -14,10 +14,10 @@ import { TransactionsApiService } from '../../../../core/services/api/transactio
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  currentOrder: Order | null = null;
   private subscriptions = new Subscription();
   private isMainTaskBusy = false;
   private peripheralTypes: string[] = [peripheralTypes.SECOND_DISPLAY];
-  currentOrder: Order | null = null;
 
   constructor(
     private peripheralActionsApiService: PeripheralActionsApiService,
