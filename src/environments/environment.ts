@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   API_URL: 'https://localhost:6001/api/v1',
+  CRM_API_URL: 'https://localhost:7194/api/v1',
   LOADER_TIMEOUT_MINUTES: 3
 };
 
